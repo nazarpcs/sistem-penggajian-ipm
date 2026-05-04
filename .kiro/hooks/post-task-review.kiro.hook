@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Review Keamanan & Kualitas Post-Task",
+  "description": "Setelah task selesai, jalankan review otomatis: security-engineer memeriksa keamanan kode yang baru ditulis, dan qa-engineer memverifikasi bahwa implementasi sesuai dengan correctness properties di design.md.",
+  "version": "1",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Task baru saja selesai. Lakukan review singkat:\n\n1. SECURITY CHECK: Periksa apakah kode yang baru dibuat/diubah sudah menerapkan:\n   - CSRF protection pada form\n   - Input sanitization\n   - Tidak ada raw SQL tanpa binding\n   - RBAC middleware terpasang jika ada route baru\n   - Audit log tercatat untuk operasi kritis\n\n2. QUALITY CHECK: Periksa apakah implementasi konsisten dengan:\n   - Correctness properties di design.md\n   - Acceptance criteria di requirements.md\n   - Clean Architecture (domain layer bebas framework dependency)\n\nJika ada masalah, laporkan secara singkat. Jika semua baik, konfirmasi task selesai dengan benar."
+  }
+}

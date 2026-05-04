@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Route Task ke Agent Spesialis",
+  "description": "Sebelum task dimulai, analisis konteks task dan panggil agent spesialis yang sesuai: backend-developer untuk migration/model/controller/service, frontend-developer untuk view/blade/UI, payroll-engine untuk perhitungan gaji, document-generator untuk PDF/Excel, validator-agent untuk validasi, security-engineer untuk keamanan/auth/RBAC, report-analytics untuk dashboard/laporan, qa-engineer untuk testing, system-architect untuk arsitektur.",
+  "version": "1",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Sebelum mengerjakan task ini, tentukan agent spesialis mana yang paling tepat berdasarkan konteks task:\n\nATURAN ROUTING:\n- Task tentang migration, model, controller, service, middleware, route, eloquent, artisan → gunakan @backend-developer\n- Task tentang view, blade, layout, UI, form, tabel, styling, Alpine.js, Tailwind → gunakan @frontend-developer\n- Task tentang perhitungan gaji, rumus gaji, KalkulatorGaji, komponen gaji, lembur, potongan, tunjangan → gunakan @payroll-engine\n- Task tentang PDF, slip gaji PDF, invoice PDF, DomPDF, template dokumen, export Excel → gunakan @document-generator\n- Task tentang validasi input, Form Request, Excel validation, duplikasi, error handling → gunakan @validator-agent\n- Task tentang login, auth, password, bcrypt, CSRF, XSS, session, rate limiting, audit log, RBAC middleware → gunakan @security-engineer\n- Task tentang dashboard, laporan, grafik, chart, statistik, report → gunakan @report-analytics\n- Task tentang test, testing, property test, unit test, feature test → gunakan @qa-engineer\n- Task tentang arsitektur, desain sistem, ERD, struktur folder → gunakan @system-architect\n\nPanggil agent yang sesuai dengan invokeSubAgent untuk mengerjakan task ini. Jika task mencakup beberapa domain, prioritaskan agent utama dan minta bantuan agent lain jika diperlukan."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Cek Kualitas Test File",
+  "description": "Setiap kali file test diedit, periksa apakah test mereferensikan correctness property yang sesuai dari design.md, menggunakan Factory untuk test data, dan property-based test menggunakan repeat(100).",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/tests/**/*.php"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "File test telah diedit. Periksa kualitas:\n\n1. Jika ini property-based test:\n   - Ada komentar referensi: // Feature: employee-payroll-system, Property {N}: {deskripsi}\n   - Menggunakan repeat(100, fn() => ...) untuk 100 iterasi\n   - Menggunakan fake() atau Factory untuk generate data random\n\n2. Jika ini feature/integration test:\n   - Menggunakan RefreshDatabase trait\n   - Menggunakan actingAs($user) untuk simulasi auth\n   - Test independent (tidak bergantung urutan)\n\n3. Umum:\n   - Menggunakan Factory, bukan hardcoded data\n   - Assertion yang jelas dan spesifik\n   - Nama test deskriptif\n\nJika ada yang perlu diperbaiki, sarankan perbaikan."
+  }
+}

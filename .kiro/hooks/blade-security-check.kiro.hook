@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Cek Keamanan Blade Template",
+  "description": "Setiap kali file Blade template diedit, periksa apakah menggunakan @csrf pada form, {{ }} untuk output escaping (bukan {!! !!}), @role directive untuk RBAC, dan responsive Tailwind classes.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.blade.php"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "File Blade template telah diedit. Periksa keamanan dan kualitas:\n\n1. KEAMANAN:\n   - Semua form memiliki @csrf\n   - Form PUT/DELETE menggunakan @method\n   - Output menggunakan {{ }} bukan {!! !!} (kecuali ada justifikasi)\n   - Tidak ada inline JavaScript yang mengandung data user tanpa escaping\n\n2. RBAC:\n   - Menu dan tombol aksi dibungkus @role directive yang sesuai\n   - Admin: akses penuh, Owner: read-only + approval, Karyawan: self-service\n\n3. UI:\n   - Menggunakan Tailwind CSS classes\n   - Responsive (sm:, md:, lg: breakpoints)\n   - Label dalam Bahasa Indonesia\n\nJika ada masalah keamanan, perbaiki langsung. Untuk masalah UI, laporkan saja."
+  }
+}

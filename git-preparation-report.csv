@@ -1,0 +1,52 @@
+Category,Item,Status,Severity,Notes
+File Penting,composer.json,PASS,Low,Ada dan valid
+File Penting,composer.lock,PASS,Low,Ada
+File Penting,package.json,PASS,Low,Ada
+File Penting,README.md,PASS,Critical,Dibuat oleh audit agent
+File Penting,.gitignore,PASS,Critical,Diperbaiki oleh audit agent
+File Penting,.env.example,PASS,Low,Ada - APP_KEY kosong (benar)
+File Terlarang,.env di .gitignore,PASS,Critical,Ada di .gitignore
+File Terlarang,/vendor di .gitignore,PASS,Critical,Ada di .gitignore
+File Terlarang,/node_modules di .gitignore,PASS,Critical,Ada di .gitignore
+File Terlarang,/storage/logs di .gitignore,PASS,Medium,Ditambahkan ke .gitignore
+File Terlarang,/bootstrap/cache di .gitignore,PASS,Medium,Ditambahkan ke .gitignore
+File Terlarang,composer-setup.php di .gitignore,PASS,Medium,File ada di disk - ditambahkan ke .gitignore
+File Terlarang,composer.phar di .gitignore,PASS,Medium,File ada di disk - ditambahkan ke .gitignore
+File Terlarang,Credential/secret files,PASS,Critical,Tidak ditemukan
+Struktur Laravel,app/,PASS,Low,Lengkap
+Struktur Laravel,routes/,PASS,Low,web.php lengkap
+Struktur Laravel,database/migrations/,PASS,Low,12 migration files
+Struktur Laravel,database/seeders/,PASS,Low,3 seeders
+Struktur Laravel,config/,PASS,Low,Semua config standar
+Struktur Laravel,resources/views/,PASS,Low,Blade views lengkap
+Database,Migration tersedia,PASS,Low,12 files
+Database,Seeder tersedia,PASS,Low,Admin + PT Klien + Karyawan
+Database,Hardcoded data,WARN,Low,Seeder password 'password' - OK untuk dev
+Code Cleanliness,dd(),PASS,Low,Tidak ditemukan
+Code Cleanliness,var_dump(),PASS,Low,Tidak ditemukan
+Code Cleanliness,console.log,PASS,Low,Tidak ditemukan
+Code Cleanliness,Commented code,PASS,Low,Tidak ditemukan
+Security,API key/secret di code,PASS,Critical,Tidak ditemukan
+Security,Input validation,PASS,High,FormRequest digunakan
+Security,SQL raw berbahaya,WARN,Low,DB::raw di Dashboard - aman (no user input)
+Security,XSS prevention,PASS,High,SanitizeInput middleware aktif
+Security,CSRF protection,PASS,High,Laravel default aktif
+Security,RBAC middleware,PASS,High,CheckRole di semua route group
+Security,Password hashing,PASS,High,bcrypt konsisten
+Config,.env.example tersedia,PASS,Medium,Lengkap
+Config,.env.example APP_KEY kosong,PASS,Medium,Benar
+Config,Hardcoded config,PASS,Medium,Semua pakai env()
+Config,APP_DEBUG,WARN,Low,true di .env.example - OK untuk dev template
+Testing,phpunit.xml,PASS,Medium,Ada
+Testing,Pest PHP config,PASS,Medium,tests/Pest.php ada
+Testing,Test files,PASS,Medium,35 test files
+Testing,Unit/Feature tests,PASS,High,318 tests passed
+Testing,E2E Playwright tests,PASS,High,86 tests passed
+Documentation,README.md,PASS,Critical,Dibuat lengkap
+Documentation,Cara install,PASS,Medium,Ada di README
+Documentation,Cara setup env,PASS,Medium,Ada di README
+Documentation,Cara run,PASS,Medium,Ada di README
+Documentation,Cara migrate,PASS,Medium,Ada di README
+Git,Git initialized,FAIL,Critical,Perlu git init
+Git,.gitignore lengkap,PASS,Critical,Diperbaiki
+Git,Branch structure,PENDING,Medium,Belum ada - perlu setup setelah git init

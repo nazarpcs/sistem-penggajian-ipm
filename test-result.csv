@@ -1,0 +1,87 @@
+TC_ID,Module,Scenario,Status,Execution_Time,Notes
+TC_ABSENSI_001,Absensi,Halaman absensi dapat diakses,Passed,4.1s,
+TC_ABSENSI_002,Absensi,Form input manual absensi dapat dibuka,Passed,4.8s,
+TC_ABSENSI_003,Absensi,Input absensi manual berhasil,Passed,6.8s,
+TC_ABSENSI_004,Absensi,Filter absensi berdasarkan status kehadiran,Passed,6.0s,
+TC_ABSENSI_005,Absensi,Halaman rekap absensi dapat diakses,Passed,4.9s,
+TC_ABSENSI_006,Absensi,Input absensi gagal tanpa memilih karyawan,Passed,5.3s,Negative test - HTML5 required validation
+TC_ABSENSI_007,Absensi,Input absensi gagal tanpa tanggal,Passed,5.0s,Negative test - HTML5 required validation
+TC_ABSENSI_008,Absensi,Input absensi dengan status Alpha tanpa jam,Passed,7.0s,Edge case
+TC_AUDIT_001,Audit,Halaman audit log dapat diakses oleh Admin,Passed,4.7s,
+TC_AUDIT_002,Audit,Audit log menampilkan tabel data,Passed,4.9s,
+TC_AUDIT_003,Audit,Login activity tercatat di audit log,Passed,3.6s,
+TC_AUDIT_004,Audit,Pemilik PT tidak dapat mengakses audit log,Passed,4.9s,RBAC enforcement
+TC_AUDIT_005,Audit,Karyawan tidak dapat mengakses audit log,Passed,4.5s,RBAC enforcement
+TC_AUTH_001,Auth,Halaman login menampilkan form email dan password,Passed,2.0s,
+TC_AUTH_002,Auth,Admin berhasil login dengan kredensial valid,Passed,4.1s,
+TC_AUTH_003,Auth,Pemilik PT berhasil login dengan kredensial valid,Passed,4.2s,
+TC_AUTH_004,Auth,Karyawan berhasil login dengan kredensial valid,Passed,3.8s,
+TC_AUTH_005,Auth,Logout berhasil menghapus sesi dan redirect ke login,Passed,8.0s,
+TC_AUTH_006,Auth,Login gagal dengan email salah,Passed,3.8s,Negative test
+TC_AUTH_007,Auth,Login gagal dengan password salah,Passed,4.5s,Negative test
+TC_AUTH_008,Auth,Login gagal dengan email kosong,Passed,2.4s,Negative test
+TC_AUTH_009,Auth,Login gagal dengan password kosong,Passed,2.2s,Negative test
+TC_AUTH_010,Auth,SQL Injection pada field email ditolak,Passed,2.2s,Security test
+TC_AUTH_011,Auth,XSS payload pada field email ditolak,Passed,2.6s,Security test
+TC_AUTH_012,Auth,Halaman forgot password dapat diakses,Passed,3.8s,
+TC_AUTH_013,Auth,Login dengan spasi di email,Passed,5.2s,Edge case
+TC_AUTH_014,Auth,Akses dashboard tanpa login redirect ke login,Passed,4.6s,Security test
+TC_DASHBOARD_001,Dashboard,Dashboard admin menampilkan stat cards,Passed,6.4s,
+TC_DASHBOARD_002,Dashboard,Dashboard admin menampilkan tabel invoice pending,Passed,5.4s,
+TC_DASHBOARD_003,Dashboard,Laporan absensi admin dapat diakses,Passed,4.1s,
+TC_DASHBOARD_004,Dashboard,Laporan penggajian admin dapat diakses,Passed,5.2s,
+TC_DASHBOARD_005,Dashboard,Dashboard owner dapat diakses,Passed,4.4s,
+TC_DASHBOARD_006,Dashboard,Owner dapat mengakses laporan,Passed,4.8s,
+TC_INVOICE_001,Invoice,Halaman invoice admin dapat diakses,Passed,4.0s,
+TC_INVOICE_002,Invoice,Modal buat invoice dapat dibuka,Passed,7.0s,
+TC_INVOICE_003,Invoice,Filter invoice berdasarkan status,Passed,6.4s,
+TC_INVOICE_004,Invoice,Laporan invoice dapat diakses,Passed,6.1s,
+TC_INVOICE_005,Invoice,Pemilik PT dapat melihat daftar invoice,Passed,6.5s,
+TC_INVOICE_006,Invoice,Pemilik PT dapat melihat detail invoice,Passed,4.0s,
+TC_INVOICE_007,Invoice,Reject invoice tanpa alasan gagal,Passed,3.8s,Negative test
+TC_KARYAWAN_001,Karyawan,Halaman daftar karyawan dapat diakses,Passed,5.5s,
+TC_KARYAWAN_002,Karyawan,Form tambah karyawan dapat diakses,Passed,7.0s,
+TC_KARYAWAN_003,Karyawan,Tambah karyawan baru berhasil,Passed,8.5s,
+TC_KARYAWAN_004,Karyawan,Daftar karyawan menampilkan data,Passed,7.7s,
+TC_KARYAWAN_005,Karyawan,Tambah karyawan gagal tanpa nama lengkap,Passed,7.3s,Negative test
+TC_KARYAWAN_006,Karyawan,Tambah karyawan gagal dengan email invalid,Passed,7.8s,Negative test
+TC_KARYAWAN_007,Karyawan,Tambah karyawan dengan gaji pokok 0,Passed,9.0s,Edge case - boundary value
+TC_KARYAWAN_008,Karyawan,Filter karyawan berdasarkan PT Klien,Passed,6.7s,
+TC_PAYROLL_001,Payroll,Halaman penggajian dapat diakses,Passed,,
+TC_PAYROLL_002,Payroll,Halaman slip gaji admin menampilkan tabel,Passed,,
+TC_PAYROLL_003,Payroll,Halaman laporan penggajian dapat diakses,Passed,,
+TC_PAYROLL_004,Payroll,Karyawan dapat mengakses halaman slip gaji,Passed,,
+TC_PAYROLL_005,Payroll,Karyawan melihat tabel slip gaji dengan kolom lengkap,Passed,,
+TC_PTKLIEN_001,PT Klien,Halaman daftar PT Klien dapat diakses,Passed,,
+TC_PTKLIEN_002,PT Klien,Form tambah PT Klien dapat diakses,Passed,,
+TC_PTKLIEN_003,PT Klien,Daftar PT Klien menampilkan data,Passed,,
+TC_PTKLIEN_004,PT Klien,Detail PT Klien dapat diakses,Passed,,
+TC_RBAC_001,RBAC,Admin dapat mengakses dashboard admin,Passed,,
+TC_RBAC_002,RBAC,Admin dapat mengakses halaman karyawan,Passed,,
+TC_RBAC_003,RBAC,Admin dapat mengakses halaman PT Klien,Passed,,
+TC_RBAC_004,RBAC,Admin dapat mengakses halaman absensi,Passed,,
+TC_RBAC_005,RBAC,Admin dapat mengakses halaman invoice,Passed,,
+TC_RBAC_006,RBAC,Admin dapat mengakses audit log,Passed,5.5s,
+TC_RBAC_007,RBAC,Pemilik PT dapat mengakses dashboard owner,Passed,4.3s,
+TC_RBAC_008,RBAC,Pemilik PT dapat mengakses halaman invoice,Passed,5.7s,
+TC_RBAC_009,RBAC,Pemilik PT TIDAK dapat mengakses halaman admin karyawan,Passed,6.1s,403/redirect enforced
+TC_RBAC_010,RBAC,Pemilik PT TIDAK dapat mengakses audit log,Passed,6.9s,403/redirect enforced
+TC_RBAC_011,RBAC,Pemilik PT TIDAK dapat mengakses halaman absensi admin,Passed,6.0s,403/redirect enforced
+TC_RBAC_012,RBAC,Karyawan dapat mengakses profil,Passed,6.1s,
+TC_RBAC_013,RBAC,Karyawan dapat mengakses riwayat absensi,Passed,6.5s,
+TC_RBAC_014,RBAC,Karyawan dapat mengakses slip gaji,Passed,6.6s,
+TC_RBAC_015,RBAC,Karyawan TIDAK dapat mengakses halaman admin,Passed,5.5s,403/redirect enforced
+TC_RBAC_016,RBAC,Karyawan TIDAK dapat mengakses halaman owner,Passed,6.6s,403/redirect enforced
+TC_RBAC_017,RBAC,Karyawan TIDAK dapat mengakses CRUD karyawan,Passed,7.3s,403/redirect enforced
+TC_RBAC_018,RBAC,Akses admin tanpa login redirect ke login,Passed,4.4s,
+TC_RBAC_019,RBAC,Akses owner tanpa login redirect ke login,Passed,3.7s,
+TC_RBAC_020,RBAC,Akses karyawan tanpa login redirect ke login,Passed,3.3s,
+TC_SEC_001,Security,Endpoint admin diproteksi - redirect ke login tanpa sesi,Passed,3.6s,
+TC_SEC_002,Security,Endpoint owner diproteksi - redirect ke login tanpa sesi,Passed,3.3s,
+TC_SEC_003,Security,Endpoint karyawan diproteksi - redirect ke login tanpa sesi,Passed,3.3s,
+TC_SEC_004,Security,Form login memiliki CSRF token,Passed,2.6s,
+TC_SEC_005,Security,POST tanpa CSRF token ditolak,Passed,2.0s,419 CSRF mismatch
+TC_SEC_006,Security,XSS payload di URL tidak dieksekusi,Passed,2.4s,
+TC_SEC_007,Security,Karyawan hanya melihat data miliknya sendiri,Passed,5.8s,Data isolation verified
+TC_SEC_008,Security,Karyawan tidak bisa akses slip gaji karyawan lain via URL,Passed,6.8s,403/404 enforced
+TC_SEC_009,Security,Akses halaman admin dengan role karyawan ditolak,Passed,6.7s,403/redirect enforced

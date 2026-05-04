@@ -1,0 +1,4 @@
+Bug_ID,Title,Module,Severity,Priority,Steps,Expected,Actual,Status
+BUG-001,AbsensiController index mengembalikan JSON alih-alih HTML view,Absensi,High,High,"1. Login Admin 2. Navigasi /admin/absensi 3. Halaman tampil JSON",Halaman HTML dengan tabel absensi,JSON response raw,Fixed
+BUG-002,InvoiceController index tidak meneruskan ptKliens dan periodes ke view,Invoice,Medium,Medium,"1. Login Admin 2. Navigasi /admin/invoice 3. Dropdown kosong",Dropdown terisi data PT Klien dan Periode,Dropdown kosong,Fixed
+BUG-003,View audit-log/index.blade.php tidak ada,Audit Log,High,High,"1. Login Admin 2. Navigasi /admin/audit-log 3. Error 500",Halaman audit log dengan tabel,500 Internal Server Error,Fixed

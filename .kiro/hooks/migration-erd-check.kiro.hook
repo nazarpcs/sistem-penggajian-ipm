@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Validasi Migration vs ERD",
+  "description": "Setiap kali file migration diedit atau dibuat, periksa apakah schema sesuai dengan ERD di design.md, memiliki rollback (down method) yang benar, dan menggunakan tipe data yang tepat.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/migrations/*.php"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "File migration telah diedit. Periksa konsistensi dengan ERD di design.md:\n\n1. Kolom dan tipe data sesuai dengan ERD di .kiro/specs/employee-payroll-system/design.md\n2. Foreign key constraints terdefinisi dengan benar (onDelete cascade/restrict)\n3. Index pada kolom yang sering di-query (foreign keys, unique constraints)\n4. Method down() memiliki rollback yang benar\n5. Unique constraint untuk: karyawan(nik), users(email), absensi(karyawan_id+tanggal), invoice(nomor_invoice), invoice(pt_klien_id+periode_id)\n\nJika ada ketidaksesuaian dengan ERD, laporkan dan sarankan perbaikan."
+  }
+}

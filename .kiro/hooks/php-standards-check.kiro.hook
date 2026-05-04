@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Cek Standar PHP pada File Baru",
+  "description": "Setiap kali file PHP baru dibuat di project Laravel, otomatis periksa apakah file mengikuti standar PSR-12, memiliki declare(strict_types=1), type hints, dan sesuai dengan arsitektur Clean Architecture yang didefinisikan di design.md.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "**/*.php"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "File PHP baru telah dibuat. Periksa apakah file ini mengikuti standar proyek:\n\n1. Ada `declare(strict_types=1);` di baris pertama setelah `<?php`\n2. Namespace sesuai dengan lokasi folder (PSR-4)\n3. Type hints pada parameter dan return type\n4. File berada di layer yang benar sesuai Clean Architecture:\n   - app/Domain/ → pure PHP, TIDAK boleh import Laravel facade\n   - app/Http/Controllers/ → hanya delegasi ke Service\n   - app/Services/ → logika bisnis\n   - app/Models/ → Eloquent model dengan $fillable/$guarded\n5. Jika ini Model, pastikan ada $fillable atau $guarded\n6. Jika ini Controller, pastikan ada middleware di route\n\nJika ada yang perlu diperbaiki, lakukan koreksi langsung."
+  }
+}
