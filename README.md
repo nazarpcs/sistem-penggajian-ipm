@@ -81,4 +81,4 @@ npx playwright test --headed
 
 ## Lisensi
 
-Proprietary — PT Indah Permata Mandiri.
+Proprietary — Nazar Syah Dumyati.
