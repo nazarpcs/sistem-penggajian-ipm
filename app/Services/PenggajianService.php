@@ -136,7 +136,7 @@ class PenggajianService
                 if ($hasil->totalLembur > 0) {
                     KomponenSlipGaji::create([
                         'slip_gaji_id' => $slipGaji->id,
-                        'tipe' => 'lembur',
+                        'tipe' => 'tunjangan',
                         'nama_komponen' => 'Lembur',
                         'nilai' => $hasil->totalLembur,
                     ]);

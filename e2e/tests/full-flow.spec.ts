@@ -88,8 +88,8 @@ test.describe('TC_FLOW: Full Payroll Cycle (Input → Output)', () => {
     await page.waitForURL(/\/admin\/penggajian/, { timeout: 30000 });
 
     // Verify success or slip gaji appears
-    const hasSuccess = await page.locator('[role="alert"]').isVisible().catch(() => false);
-    const hasTable = await page.locator('table').isVisible();
+    const hasSuccess = await page.locator('[role="alert"]').first().isVisible().catch(() => false);
+    const hasTable = await page.locator('main table').first().isVisible().catch(() => false);
     expect(hasSuccess || hasTable).toBeTruthy();
   });
 
