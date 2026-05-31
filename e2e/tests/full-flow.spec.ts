@@ -162,7 +162,7 @@ test.describe('TC_FLOW: Full Payroll Cycle (Input → Output)', () => {
     await expect(page).toHaveURL(/\/admin\/invoice/);
 
     // Open Buat Invoice modal
-    await page.locator('button:has-text("Buat Invoice")').click();
+    await page.locator('button[type="button"]:has-text("Buat Invoice")').click();
     const ptKlienSelect = page.locator('#inv_pt_klien_id');
     await expect(ptKlienSelect).toBeVisible();
 
