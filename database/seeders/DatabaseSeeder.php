@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             PtKlienSeeder::class,
             KaryawanSeeder::class,
+            PeriodePenggajianSeeder::class,
         ]);
     }
 }

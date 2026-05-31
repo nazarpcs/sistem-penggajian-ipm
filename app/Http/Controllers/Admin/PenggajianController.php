@@ -61,8 +61,10 @@ class PenggajianController extends Controller
     {
         $filters = $request->only(['pt_klien_id', 'periode_id', 'karyawan_id', 'nama']);
         $slipGaji = $this->penggajianService->listSlipGaji($filters);
+        $ptKliens = \App\Models\PtKlien::orderBy('nama')->get();
+        $periodes = \App\Models\PeriodePenggajian::orderBy('tahun', 'desc')->orderBy('bulan', 'desc')->get();
 
-        return view('admin.penggajian.index', compact('slipGaji', 'filters'));
+        return view('admin.penggajian.index', compact('slipGaji', 'filters', 'ptKliens', 'periodes'));
     }
 
     /**

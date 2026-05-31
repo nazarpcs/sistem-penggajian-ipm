@@ -8,8 +8,9 @@ export default defineConfig({
   testDir: './e2e/tests',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
-  retries: 2,
-  workers: 1,
+  retries: 1,
+  workers: 3,
+  timeout: 60000,
   reporter: [
     ['html', { open: 'never', outputFolder: 'e2e/reports/html' }],
     ['json', { outputFile: 'e2e/reports/test-results.json' }],
@@ -24,10 +25,12 @@ export default defineConfig({
     navigationTimeout: 60000,
   },
   webServer: {
-    command: 'php artisan serve --port=8000',
+    command: 'php artisan serve --port=8000 --no-reload',
     url: 'http://127.0.0.1:8000',
     reuseExistingServer: true,
-    timeout: 30000,
+    timeout: 120000,
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
   projects: [
     {
