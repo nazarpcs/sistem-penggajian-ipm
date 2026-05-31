@@ -1,5 +1,3 @@
 {
-  "php": {
-    "extensions": ["pdo_mysql", "mbstring", "xml", "gd", "zip", "bcmath", "intl"]
-  }
+  "$schema": "https://schema.railpack.com"
 }
