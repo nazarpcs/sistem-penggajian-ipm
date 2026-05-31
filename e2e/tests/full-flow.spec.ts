@@ -188,7 +188,7 @@ test.describe('TC_FLOW: Full Payroll Cycle (Input → Output)', () => {
     if (periodeValue) await periodeSelect.selectOption(periodeValue);
 
     // Submit
-    await page.locator('form[action*="invoice"] button[type="submit"]').click();
+    await page.locator('form[method="POST"][action*="invoice"] button[type="submit"]').click();
     await page.waitForURL(/\/admin\/invoice/, { timeout: 15000 });
 
     // Verify invoice created (success message or table has data)
