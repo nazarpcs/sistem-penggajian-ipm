@@ -17,7 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        return match (auth()->user()->role) {
+            'admin' => redirect()->route('admin.dashboard'),
+            'pemilik_pt' => redirect()->route('owner.dashboard'),
+            'karyawan' => redirect()->route('karyawan.dashboard'),
+            default => redirect()->route('login'),
+        };
+    }
+    return redirect()->route('login');
 });
 
 // Auth routes
